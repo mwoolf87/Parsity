@@ -18,3 +18,9 @@ if (nums >= 1 && nums <= 10) {
 }
 
 console.log(!true);
+
+let loggedInUser;
+
+if (!loggedInUser) {
+  console.log("GET OUT OF HERE");
+}
