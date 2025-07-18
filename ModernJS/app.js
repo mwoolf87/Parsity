@@ -437,14 +437,123 @@
 
 //Write a function called isPangram, which checks to see if a given sentence contains every letter of the alphabet. Make sure you ignore string casing!
 
-function isPangram(sentence) {
-  const alphabet = "abcdefghijklmnopqrstuvwxyz";
-  const lowerCased = sentence.toLowerCase();
+// function isPangram(sentence) {
+//   const alphabet = "abcdefghijklmnopqrstuvwxyz";
+//   const lowerCased = sentence.toLowerCase();
 
-  for (let char of alphabet) {
-    if (!lowerCased.includes(char)) {
-      return false;
-    }
-  }
-  return true;
+//   for (let char of alphabet) {
+//     if (!lowerCased.includes(char)) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// function pick(arr) {
+//   const idx = Math.floor(Math.random() * arr.length);
+//   return arr[idx];
+// }
+// function getCard() {
+//   let values = [
+//     "2",
+//     "3",
+//     "4",
+//     "5",
+//     "6",
+//     "7",
+//     "8",
+//     "9",
+//     "10",
+//     "J",
+//     "Q",
+//     "K",
+//     "A",
+//   ];
+
+//   let suits = ["clubs", "spades", "hearts", "diamonds"];
+
+//   const value = pick(values);
+
+//   const suit = pick(suits);
+//   return { value, suit };
+// }
+
+// getCard();
+
+// function doubleArr(arr) {
+//   const result = [];
+//   for (let num of arr) {
+//     let double = num * 2;
+//     result.push(double);
+//   }
+//   return result;
+// }
+
+// doubleArr();
+
+// ---- function expression --- //
+
+// function add(x, y) {
+//   return x + y;
+// }
+
+// const sum = function (x, y) {
+//   return x + y;
+// };
+
+// const product = function multiply(x, y) {
+//   return x * y;
+// };
+
+// function add(x, y) {
+//   return x + y;
+// }
+// function subtract(x, y) {
+//   return x - y;
+// }
+// function multiply(x, y) {
+//   return x * y;
+// }
+// function divide(x, y) {
+//   return x / y;
+// }
+
+// const operations = [add, subtract, multiply, divide];
+
+// for (let func of operations) {
+//   let result = func(30, 5);
+//   console.log(result);
+// }
+
+// const thing = {
+//   doSomething: multiply,
+// };
+
+//  ---- higher order functions ---- //
+
+// function callThreeTimes(f) {
+//   f();
+//   f();
+//   f();
+// }
+
+// function gratitude() {
+//   console.log("I am Thankful for this opportunity to change my life");
+// }
+
+// function repeatNTimes(action, num) {
+//   for (let i = 0; i < num; i++) {
+//     action();
+//   }
+// }
+
+//repeatNTimes(gratitude, 10);
+
+function multiplyBy(num) {
+  return function (x) {
+    return x * num;
+  };
 }
+
+const triple = multiplyBy(3);
+const double = multiplyBy(2);
