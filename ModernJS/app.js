@@ -354,10 +354,10 @@
 
 // ----- FUNCTIONS ---- //
 
-// function grumpus() {
-//   console.log("ugh.. you again!");
-//   console.log("LEAVE");
-// }
+function grumpus() {
+  console.log("ugh.. you again!");
+  console.log("LEAVE");
+}
 
 // grumpus();
 
@@ -549,11 +549,177 @@
 
 //repeatNTimes(gratitude, 10);
 
-function multiplyBy(num) {
-  return function (x) {
-    return x * num;
-  };
-}
+// function multiplyBy(num) {
+//   return function (x) {
+//     return x * num;
+//   };
+// }
 
-const triple = multiplyBy(3);
-const double = multiplyBy(2);
+// const triple = multiplyBy(3);
+// const double = multiplyBy(2);
+
+// function makeBetweenFunc(x, y) {
+//   return function (num) {
+//     return num >= x && num <= y;
+//   };
+// }
+
+// const isChild = makeBetweenFunc(0, 18);
+// const isInNineties = makeBetweenFunc(1990, 2000);
+
+// const isNiceWeather = makeBetweenFunc(60, 79);
+
+// ---- callbacks ----- //
+
+// setTimeout(function () {
+//   alert("Welcome");
+// }, 5000);
+
+// const btn = document.querySelector("button");
+
+// btn.addEventListener("click", function () {
+//   alert("WHY DID YOU CLICK ME!!");
+// });
+
+// ---- HOISTING --- //
+// console.log(animal);
+// var animal = "Tapir";
+
+// howl();
+// function howl() {
+//   console.log("Awoooooo");
+// }
+
+// Below example the variable is hoisted, but the variable is not.
+// hoot();
+// let hoot = function () {
+//   console.log("Hooty Hoot!");
+// };
+
+// --- array callback methods --- //
+
+// --- FOREACH
+
+// const numbers = [20, 21, 22, 23, 24, 25, 26, 27];
+
+// numbers.forEach(function (num) {
+//   console.log(num);
+// });
+
+// function printTriple(n) {
+//   console.log(n * 3);
+// }
+
+// numbers.forEach(printTriple);
+
+// numbers.forEach(function (num, i) {
+//   console.log(i, num);
+// });
+
+const books = [
+  {
+    title: "Good Omens",
+    authors: ["Terry Pratchett", "Neil Gaiman"],
+    rating: 4.25,
+    genres: ["fiction", "fantasy"],
+  },
+  {
+    title: "Changing My Mind",
+    authors: ["Zadie Smith"],
+    rating: 3.83,
+    genres: ["nonfiction", "essays"],
+  },
+  {
+    title: "Bone: The Complete Edition",
+    authors: ["Jeff Smith"],
+    rating: 4.42,
+    genres: ["fiction", "graphic novel", "fantasy"],
+  },
+  {
+    title: "American Gods",
+    authors: ["Neil Gaiman"],
+    rating: 4.11,
+    genres: ["fiction", "fantasy"],
+  },
+  {
+    title: "A Gentleman in Moscow",
+    authors: ["Amor Towles"],
+    rating: 4.36,
+    genres: ["fiction", "historical fiction", "short-stories"],
+  },
+];
+
+// books.forEach(function (book) {
+//   console.log(book.title.toUpperCase());
+// });
+
+const numbers = [20, 21, 22, 23, 24, 25, 26, 27];
+const words = ["asap", "byob", "rsvp", "diy"];
+
+// const doubles = numbers.map(function (num) {
+//   return num * 2;
+// });
+
+// const numDetail = numbers.map(function (n) {
+//   return {
+//     value: n,
+//     isEven: n % 2 === 0,
+//   };
+// });
+
+// const abbrevs = words.map(function (w) {
+//   return w.toUpperCase().split("").join(".");
+// });
+
+// const bookTitles = books.map(book => {
+//   return book.title;
+// });
+
+// const square = x => x * x;
+
+// const nums = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// const doubles1 = nums.map(n => n * 2);
+
+// const parityList = nums.map(n => (n % 2 === 0 ? "Even" : "Odd"));
+
+let movies = [
+  "The Fantastic Mr. Fox",
+  "Mr. and Mrs. Smith",
+  "Mrs. Doubtfire",
+  "Mr. Deeds",
+];
+
+// const movie = movies.find(movie => {
+//   return movie.includes("Mrs");
+// });
+// const movie2 = movies.find(movie => movie.startsWith("Mrs"));
+
+// const neilBook = books.find(book => book.authors.includes("Neil Gaiman"));
+
+//  ---- Filter --- //
+
+const nums = [34, 35, 67, 54, 109, 102, 32, 9];
+
+// const odds = nums.filter(n => n % 2 === 1);
+// const evens = nums.filter(n => n % 2 === 0);
+// const bigNums = nums.filter(n => n > 50);
+
+// const goodBooks = books.filter(book => book.rating > 4.3);
+// const fantasyBooks = books.filter(book => book.genres.includes("fantasy"));
+// const shortForm = books.filter(
+//   book =>
+//     book.genres.includes("short-stories") || book.genres.includes("essays")
+// );
+
+// --- Every --- //
+
+// const wordz = ["dog", "dig", "log", "bag", "wag"];
+
+// const all3Lets = wordz.every(word => word.length === 3);
+
+// ---- SORT ---- //
+
+const prices = [400.5, 3000, 99.99, 35.99, 12.0, 9500];
+
+const sort1 = prices.sort((a, b) => a - b);
