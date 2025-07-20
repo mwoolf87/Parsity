@@ -764,3 +764,249 @@ const votes = ["y", "n", "y", "n", "y", "y", "y", "n", "n"];
 //   groupedBooks[key].push(book);
 //   return groupedBooks;
 // }, {});
+
+// ---- spread ----- //
+// Spread in a function call
+
+// function giveMeFour(a, b, c, d) {
+//   console.log("a", a);
+//   console.log("b", b);
+//   console.log("c", c);
+//   console.log("d", d);
+// }
+
+const colors = ["red", "orange", "yellow", "green"];
+
+// giveMeFour(...colors);
+
+const cephalopods = [
+  "dumbo octopus",
+  "humboldt squid",
+  "flamboyant cuttlefish",
+];
+
+const gastropods = ["giant african snail", "banana slug", "variable neon slug"];
+
+const cnidaria = ["fire coral", "moon", "jelly"];
+
+const mollusca = [...cephalopods, ...gastropods];
+
+const inverts = [...cnidaria, ...gastropods, ...cephalopods];
+
+const feline = {
+  legs: 4,
+  family: "Felidae",
+};
+
+const canine = {
+  family: "Caninae",
+  furry: true,
+  legs: 4,
+};
+
+const dog = {
+  ...canine,
+  isPet: true,
+  adorable: true,
+};
+
+const houseCat = {
+  ...feline,
+  isGrumpy: true,
+  personality: "unpredictable",
+};
+
+// --- REST ---- //
+// rest creates an actual array whereas spread creates an array-like object
+// rest must be the last formal parameter ie (first, last, ...rest)
+function sum(...nums) {
+  return nums.reduce((total, currVal) => {
+    return total + currVal;
+  });
+}
+// ----- DESTRUCTURING ARRAYS---- //
+const raceResults = [
+  "Eliud Kichoge",
+  "Feyisa Lelisa",
+  "Galen Rupp",
+  "Ghirmay Ghebreslassie",
+  "Alpgonce Simbu",
+  "Jared Ward",
+];
+
+// const [gold, silver, bronze] = raceResults;
+// const [first, , , fourth] = raceResults;
+
+// ----- DESTRUCTURING OBJECTS ---- //
+
+const runner = {
+  first: "Eliud",
+  last: "Kipchoge",
+  country: "Kenya",
+  title: "Elder of the Order of the Golden Heard of Kenya",
+};
+
+// //const { first, last } = runner;
+
+// // if you want to change the key variable name when destructuring an object they syntax is as follows:
+
+// const { country: nation, title: honor } = runner;
+
+// const { first, last, ...other } = runner;
+
+// const results = [
+//   {
+//     first: "Eliud",
+//     last: "Kipchoge",
+//     country: "Kenya",
+//   },
+//   {
+//     first: "Feyisa",
+//     last: "Lilesa",
+//     country: "Ethiopia",
+//   },
+//   {
+//     first: "Galen",
+//     last: "Rupp",
+//     country: "United States",
+//   },
+// ];
+
+// const [{ first: goldWinner }, { country }] = results;
+
+// function print({ first, last, title }) {
+//   console.log(`${first} ${last}, ${title}`);
+// }
+
+// const response = ["HTTP/1.1", "200 OK", "application/json"];
+
+// function parseResponse([protocol, statusCode, contentType]) {
+//   console.log(`Status: ${statusCode}`);
+// }
+
+// ---- computed properties ----- //
+
+// const role = "host";
+// const person = "Jools Holland";
+// const role2 = "Director";
+// const person2 = "James Cameron";
+
+// const team = {};
+// team[role] = person;
+
+// const team = {
+//   [role]: person,
+//   [role2]: person2,
+// };
+
+// const addProp = (obj, k, v) => {
+//   return { ...obj, [k]: v };
+// };
+
+// const res = addProp(team, "happy", ":)");
+// ----- METHOD EXAMPLE ---- //
+// const math = {
+//   add: (x, y) => x + y,
+//   subtract: (x, y) => x - y,
+//   multiply: (x, y) => x * y,
+//   divide: (x, y) => x / y,
+// };
+
+// ------ THIS IN JAVASCRIPT ------ //
+
+// function sayHi() {
+//   console.log("HI");
+//   console.log(this); // console.logs the window
+// }
+
+// const person = {
+//   first: "Cherilyn",
+//   last: "Sarkisian",
+//   nickName: "Cher",
+//   fullName() {
+//     const { first, last, nickName } = this;
+//     return `${first} ${last} AKA ${nickName}`;
+//   },
+//   printBio() {
+//     const fullName = this.fullName();
+//     console.log(`${fullName} is a person!`);
+//   },
+//   laugh() {
+//     console.log(this);
+//     console.log(`${this.nickName} says AHAHAHAHA`);
+//   },
+// };
+
+const annoyer = {
+  phrases: [
+    "literally",
+    "cray cray",
+    "I can't even",
+    "Totes",
+    "YOLO",
+    "Can't Stop, Won't Stop",
+  ],
+  pickPhrase() {
+    const { phrases } = this;
+    const idx = Math.floor(Math.random() * phrases.length);
+    return phrases[idx];
+  },
+  start() {
+    this.timerId = setInterval(() => {
+      console.log(this.pickPhrase());
+    }, 3000);
+  },
+  stop() {
+    clearInterval(this.timerId);
+  },
+};
+
+const makeDeck = () => {
+  return {
+    deck: [],
+    drawnCards: [],
+    suits: ["hearts", "diamonds", "spades", "clubs"],
+    values: "2,3,4,5,6,7,8,9,10,J,Q,K,A",
+    initializeDeck() {
+      const { suits, values, deck } = this;
+      for (let value of values.split(",")) {
+        for (let suit of suits) {
+          deck.push({ value, suit });
+        }
+      }
+      // return deck;
+    },
+    drawCard() {
+      const card = this.deck.pop();
+      this.drawnCards.push(card);
+      return card;
+    },
+    drawMultiple(numCards) {
+      const cards = [];
+      for (let i = 0; i < numCards; i++) {
+        cards.push(this.drawCard());
+      }
+      return cards;
+    },
+    shuffle() {
+      const { deck } = this;
+      //loop over array backwards
+      for (let i = deck.length - 1; i > 0; i--) {
+        //pick random index before current element
+        let j = Math.floor(Math.random() * (i + 1));
+        //swap
+        [deck[i], deck[j]] = [deck[j], deck[i]];
+      }
+    },
+  };
+};
+
+const myDeck = makeDeck();
+myDeck.initializeDeck();
+myDeck.shuffle();
+const hand1 = myDeck.drawMultiple(2);
+const hand2 = myDeck.drawMultiple(2);
+const hand3 = myDeck.drawMultiple(5);
+
+const deck2 = makeDeck();
+deck2.initializeDeck();
