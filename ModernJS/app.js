@@ -642,6 +642,12 @@ const books = [
     genres: ["fiction", "fantasy"],
   },
   {
+    title: "A Terrible Book",
+    authors: ["Xavier Time"],
+    rating: 2.3,
+    genres: ["fiction", "garbage"],
+  },
+  {
     title: "A Gentleman in Moscow",
     authors: ["Amor Towles"],
     rating: 4.36,
@@ -720,6 +726,41 @@ const nums = [34, 35, 67, 54, 109, 102, 32, 9];
 
 // ---- SORT ---- //
 
-const prices = [400.5, 3000, 99.99, 35.99, 12.0, 9500];
+// const prices = [400.5, 3000, 99.99, 35.99, 12.0, 9500];
 
-const sort1 = prices.sort((a, b) => a - b);
+// const sort1 = prices.sort((a, b) => a - b);
+
+// const booksByRating = books.sort((a, b) => b.rating - a.rating);
+
+// ---- REDUCE ---- //
+const grades = [87, 64, 96, 92, 88, 99, 73, 70, 64];
+
+const maxGrade = grades.reduce((max, currVal) => {
+  if (currVal > max) return currVal;
+  return max;
+});
+const maxGrade2 = grades.reduce((max, currVal) => {
+  return Math.max(max, currVal);
+});
+
+const votes = ["y", "n", "y", "n", "y", "y", "y", "n", "n"];
+
+// const results = votes.reduce((tally, val) => {
+//   if (tally[val]) {
+//     tally[val]++;
+//   } else {
+//     tally[val] = 1;
+//   }
+//   return tally;
+// }, {});
+// const results = votes.reduce((tally, val) => {
+//   tally[val] = (tally[val] || 0) + 1;
+//   return tally;
+// }, {});
+
+// const groupedByRatings = books.reduce((groupedBooks, book) => {
+//   const key = Math.floor(book.rating);
+//   if (!groupedBooks[key]) groupedBooks[key] = [];
+//   groupedBooks[key].push(book);
+//   return groupedBooks;
+// }, {});
