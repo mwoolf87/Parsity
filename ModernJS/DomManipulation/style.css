@@ -22,3 +22,8 @@ input[type="password"]{
     width: 100px;
 }
 
+.todo {
+font-size: 30px;
+color: olive;
+}
+
