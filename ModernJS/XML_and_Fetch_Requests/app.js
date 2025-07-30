@@ -1,3 +1,5 @@
+// ----- EXAMPLE OF XML REQUEST --- //
+
 // const firstRequest = new XMLHttpRequest();
 // firstRequest.addEventListener("load", function () {
 //   console.log("FIRST REQUEST WORKED");
@@ -26,6 +28,18 @@
 // firstRequest.send();
 // console.log("Request Sent!");
 
-fetch("https://swapi.info/api/planets").then(response => {
-  console.log(response);
-});
+// ---- EXAMPLE OF A FETCH REQUEST ---- //
+fetch("https://swapi.info/api/planets")
+  .then(response => {
+    if (!response.ok) throw new Error(`status code error: ${response.status}`);
+
+    response.json().then(data => {
+      for (let planet of data) {
+        console.log(planet.name);
+      }
+    });
+  })
+  .catch(err => {
+    console.log("SOMETHING WENT WRONG WITH THE FETCH!");
+    console.log(err);
+  });
