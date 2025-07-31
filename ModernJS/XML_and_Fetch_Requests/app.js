@@ -29,32 +29,50 @@
 // console.log("Request Sent!");
 
 // ---- EXAMPLE OF A FETCH REQUEST ---- //
-const checkStatusAndParse = response => {
-  if (!response.ok) throw new Error(`status code error: ${response.status}`);
+// const checkStatusAndParse = response => {
+//   if (!response.ok) throw new Error(`status code error: ${response.status}`);
 
-  return response.json();
+//   return response.json();
+// };
+
+// const printPlanets = data => {
+//   for (planet of data) {
+//     console.log(planet.name);
+//   }
+//   return Promise.resolve(data);
+// };
+
+// fetch("https://swapi.info/api/planets")
+//   .then(checkStatusAndParse)
+//   .then(printPlanets)
+//   .then(data => {
+//     const filmURL = data[0].films[0];
+//     return fetch(filmURL);
+//   })
+//   .then(checkStatusAndParse)
+//   .then(data => {
+//     console.log("FETCH FIRST FILM BASED OFF OF FIRST PLANET");
+//     console.log(data.title);
+//   })
+//   .catch(err => {
+//     console.log("SOMETHING WENT WRONG WITH THE FETCH!");
+//     console.log(err);
+//   });
+
+// ----- EXAMPLE OF AXIOS REQUEST ----- //
+
+const fetchPlanets = (url = "https://swapi.info/api/planets") => {
+  return axios.get(url);
 };
 
-const printPlanets = data => {
-  for (planet of data) {
+const printPlanets = ({ data }) => {
+  for (let planet of data) {
     console.log(planet.name);
   }
-  return Promise.resolve(data);
 };
 
-fetch("https://swapi.info/api/planets")
-  .then(checkStatusAndParse)
+fetchPlanets()
   .then(printPlanets)
-  .then(data => {
-    const filmURL = data[0].films[0];
-    return fetch(filmURL);
-  })
-  .then(checkStatusAndParse)
-  .then(data => {
-    console.log("FETCH FIRST FILM BASED OFF OF FIRST PLANET");
-    console.log(data.title);
-  })
   .catch(err => {
-    console.log("SOMETHING WENT WRONG WITH THE FETCH!");
-    console.log(err);
+    console.log("ERROR", err);
   });
