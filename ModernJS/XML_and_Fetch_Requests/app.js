@@ -33,11 +33,21 @@ fetch("https://swapi.info/api/planets")
   .then(response => {
     if (!response.ok) throw new Error(`status code error: ${response.status}`);
 
-    response.json().then(data => {
-      for (let planet of data) {
-        console.log(planet.name);
-      }
-    });
+    return response.json();
+  })
+  .then(data => {
+    console.log("FETCHED ALL PLANETS");
+    console.log(data);
+    const filmURL = data[0].films[0];
+    return fetch(filmURL);
+  })
+  .then(response => {
+    if (!response.ok) throw new Error(`status code error: ${response.status}`);
+    return response.json();
+  })
+  .then(data => {
+    console.log("FETCH FIRST FILM BASED OFF OF FIRST PLANET");
+    console.log(data.title);
   })
   .catch(err => {
     console.log("SOMETHING WENT WRONG WITH THE FETCH!");
