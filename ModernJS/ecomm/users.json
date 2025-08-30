@@ -6,5 +6,10 @@
     "email": "test1@testing.com",
     "password": "abcd",
     "id": "c49a1334"
+  },
+  {
+    "email": "test3@test.com",
+    "password": "password",
+    "id": "7e5ae711"
   }
 ]
