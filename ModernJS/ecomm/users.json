@@ -31,5 +31,10 @@
     "email": "test10@test.com",
     "password": "4211bfcad8d3def24d04b9d88d4a08cdff7fefab77974c86e0e9394ae1ab9a6061f2dbf6d3389f3e9aa870f65e9070e88537f7f89af3d861705c89b46558a342.76e8d9f3f6b98cd7",
     "id": "7f49b927"
+  },
+  {
+    "email": "mwoolf@test.com",
+    "password": "07c53095adfefdbd83294d6c8a783125ab9b88b77f7cce69e89d51c2f35cbdf7ba45b4016f60e78138d28d5704d3558c1b350bf848b9e95f3f33b90fd853848e.66c9b8c251e7f84f",
+    "id": "72a65678"
   }
 ]
