@@ -1,6 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 const chalk = require("chalk");
+const render = require("./render");
+
+const forbiddenDirs = ["node_modules"];
 
 class Runner {
   constructor() {
@@ -11,6 +14,7 @@ class Runner {
     for (let file of this.testFiles) {
       console.log(chalk.gray(`---- ${file.shortName}`));
       const beforeEaches = [];
+      global.render = render;
       global.beforeEach = fn => {
         beforeEaches.push(fn);
       };
@@ -18,10 +22,11 @@ class Runner {
         beforeEaches.forEach(func => func());
         try {
           fn();
-          console.log(chalk.green(`OK - ${desc}`));
+          console.log(chalk.green(`\tOK - ${desc}`));
         } catch (err) {
-          console.log(chalk.red(`X - ${desc}`));
-          console.log(chalk.red("\t", err.message));
+          const message = err.message.replace(/\n/g, "\n\t\t");
+          console.log(chalk.red(`\tX - ${desc}`));
+          console.log(chalk.red("\t", message));
         }
       };
       try {
@@ -41,7 +46,7 @@ class Runner {
 
       if (stats.isFile() && file.includes(".test.js")) {
         this.testFiles.push({ name: filepath, shortName: file });
-      } else if (stats.isDirectory()) {
+      } else if (stats.isDirectory() && !forbiddenDirs.includes("file")) {
         const chilfFiles = await fs.promises.readdir(filepath);
 
         files.push(...chilfFiles.map(f => path.join(file, f)));
