@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Heaviest Birds</title>
+    <title>Formz</title>
   </head>
-  <body>
-    <h1>Heaviest Birds</h1>
-    <table>
+  <body style="margin-left: 100px">
+    <h1>Formzz</h1>
+    <!-- <table>
       <thead>
         <th>Subscription</th>
         <th>Price</th>
@@ -30,21 +30,51 @@
           <td>24/7</td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
     <form action="">
       <p>
         <label for="username">enter a username:</label>
-        <input id="username" type="text" placeholder="username" />
+        <input
+          id="username"
+          type="text"
+          placeholder="username"
+          name="username"
+        />
       </p>
       <p>
         <label for="email">Email</label>
-        <input type="email" id="email" />
+        <input name="email" type="email" id="email" />
       </p>
       <p>
         <label for="password">Password</label>
-        <input type="password" id="password" />
+        <input type="password" id="password" name="password" />
       </p>
       <button type="submit">Submit</button>
+    </form>
+
+    <h2>More Inputs!</h2>
+    <form action="/birds">
+      <input type="checkbox" name="agree_tos" id="agree" />
+      <label for="agree">I agree to everything</label>
+      <h2>Whats your shirt size big dog?</h2>
+      <p>
+        <label for="xs" id="xs">XS</label>
+        <input type="radio" name="size" id="xs" value="xs" />
+        <label for="s" id="s">S</label>
+        <input type="radio" name="size" id="s" value="s" />
+        <label for="m" id="m">M</label>
+        <input type="radio" name="size" id="m" value="m" />
+      </p>
+      <p>
+        <label for="meal">Please select an entree</label>
+        <select name="meal" id="meal">
+          <option value="fish">Fish</option>
+          <option value="veg">Vegetarian</option>
+          <option value="steak">Steak</option>
+          <option value="chicken">Chicken</option>
+        </select>
+      </p>
+      <button>Submit</button>
     </form>
   </body>
 </html>
