@@ -27,3 +27,8 @@ background-color: palegreen;
 h1:hover {
     text-decoration: line-through;
 }
+
+h1::first-letter {
+    color: red;
+    font-size: 100px;
+}
