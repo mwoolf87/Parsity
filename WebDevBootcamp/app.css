@@ -23,3 +23,7 @@ background-color: palegreen;
 #three{
     text-decoration: underline;
 }
+
+h1:hover {
+    text-decoration: line-through;
+}
