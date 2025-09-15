@@ -1,0 +1,40 @@
+h1 {
+    text-align: center;
+    font-weight: 400;
+    text-decoration: blue underline wavy;
+    letter-spacing: 15px;
+    font-size: 80px;
+}
+
+h2{
+    font-size: 50px;
+}
+
+#one{color: purple;
+    font-size: large;
+background-color: palegreen;
+}
+
+#two{
+    font-style: italic;
+    font-size: 25px;
+}
+
+#three{
+    text-decoration: underline;
+}
+
+h1:hover {
+    text-decoration: line-through;
+}
+
+h1::first-letter {
+    color: red;
+    font-size: 100px;
+}
+
+img {
+    width: 200px;
+    border: 5px solid rgb(236, 183,191);
+    border-radius: 50%;
+}

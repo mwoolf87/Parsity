@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formz</title>
+  </head>
+  <body style="margin-left: 100px">
+    <h1>Formzz</h1>
+    <!-- <table>
+      <thead>
+        <th>Subscription</th>
+        <th>Price</th>
+        <th>Support</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Free</td>
+          <td>Free</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>Personal</td>
+          <td>$9.99</td>
+          <td>Weedays</td>
+        </tr>
+        <tr>
+          <td>Business</td>
+          <td>$49.99</td>
+          <td>24/7</td>
+        </tr>
+      </tbody>
+    </table> -->
+    <form action="">
+      <p>
+        <label for="username">enter a username:</label>
+        <input
+          id="username"
+          type="text"
+          placeholder="username"
+          name="username"
+        />
+      </p>
+      <p>
+        <label for="email">Email</label>
+        <input name="email" type="email" id="email" />
+      </p>
+      <p>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" />
+      </p>
+      <button type="submit">Submit</button>
+    </form>
+
+    <h2>More Inputs!</h2>
+    <form action="/birds">
+      <input type="checkbox" name="agree_tos" id="agree" />
+      <label for="agree">I agree to everything</label>
+      <h2>Whats your shirt size big dog?</h2>
+      <p>
+        <label for="xs" id="xs">XS</label>
+        <input type="radio" name="size" id="xs" value="xs" />
+        <label for="s" id="s">S</label>
+        <input type="radio" name="size" id="s" value="s" />
+        <label for="m" id="m">M</label>
+        <input type="radio" name="size" id="m" value="m" />
+      </p>
+      <p>
+        <label for="meal">Please select an entree</label>
+        <select name="meal" id="meal">
+          <option value="fish">Fish</option>
+          <option value="veg">Vegetarian</option>
+          <option value="steak">Steak</option>
+          <option value="chicken">Chicken</option>
+        </select>
+      </p>
+      <button>Submit</button>
+    </form>
+    <form action="">
+      <input type="text" placeholder="username" id="username" />
+      <label for="username">Username:</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="password"
+      />
+      <label for="password">Password:</label>
+      <button>Register</button>
+    </form>
+
+    <h2>Validations Demo</h2>
+    <form action="">
+      <label for="first">Enter First Name</label>
+      <input type="text" name="first" id="first" required />
+      <label for="username">Username</label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        minlength="5"
+        maxlength="20"
+        required
+      />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
