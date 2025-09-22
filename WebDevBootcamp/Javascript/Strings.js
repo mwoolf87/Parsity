@@ -39,4 +39,11 @@ city[3]; //'y'
 const color = "olive green";
 const msg = `My favorite color is: ${color}`; //"My favorite color is: olive green"
 
-const str = `There are ${60 * 60 * 24} seconds in a day`; //"There are 86400 seconds in a day"
+const str = `    There are ${60 * 60 * 24} seconds in a day`; //"There are 86400 seconds in a day"
+str.trim(); // removes whitespace
+str.toUpperCase; // capitalizes strings
+
+let tvShow = "catdog";
+tvShow.indexOf("cat"); // 0
+tvShow.indexOf("dog"); // 3
+tvShow.indexOf("z"); // -1
