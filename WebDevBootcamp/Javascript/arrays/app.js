@@ -28,3 +28,12 @@ let coolColors = colors.slice(3); //[ "green", "blue", "indigo", "violet"];
 let warmColors = colors.slice(0, 3); //["red", "orange", "yellow"]
 colors.splice(5, 1); //[ "red","organge","yellow","green", "blue", "violet"];
 colors.splice(1, 0, "red-orange"); //['red', 'red-orange', 'orange', 'yellow', 'green', 'blue', 'violet']
+
+// -- With arrays, values can change as long as the reference remains the same.
+
+const gameBoard = [
+  ["X", "O", "X"],
+  ["O", null, "X"],
+  ["O", "O", "X"],
+];
+console.log(gameBoard[1][1]);
