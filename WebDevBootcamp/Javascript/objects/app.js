@@ -13,3 +13,9 @@ const fitBitData = {
 // two ways of accessing object values.. dot notation and bracket notation
 console.log(fitBitData.totalSteps); //308727
 console.log(fitBitData["totalSteps"]); //308727
+
+const comments = [
+  { username: "Tammy", text: "lololol", votes: 9 },
+  { username: "FishBoi", text: "glub glub", votes: 12387 },
+];
+comments[1].text; //"glub glub"
