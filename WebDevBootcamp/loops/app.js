@@ -33,13 +33,43 @@ const animals = ["lions", "tigers", "bears"];
 //   console.log(value.toUpperCase());
 // }
 
-let str = "123";
-for (let i = 0; i <= 4; i++) {
-  console.log("outer:", i);
-  for (let j = 0; j < str.length; j++) {
-    console.log("    Inner:", str[j]);
-  }
-}
+// let str = "123";
+// for (let i = 0; i <= 4; i++) {
+//   console.log("outer:", i);
+//   for (let j = 0; j < str.length; j++) {
+//     console.log("    Inner:", str[j]);
+//   }
+// }
+
+// const seatingChart = [
+//   ["Kristen", "Erik", "Namita"],
+//   ["Geoffrey", "Juanita", "Antonio", "Kevin"],
+//   ["Yuma", "Sakura", "Jack", "Erika"],
+// ];
+
+// for (let i = 0; i < seatingChart.length; i++) {
+//   const row = seatingChart[i];
+//   console.log(`ROW #${i + 1}`);
+//   for (let j = 0; j < row.length; j++) {
+//     console.log(row[j]);
+//   }
+// }
+
+// ------ While loops
+// This is useful where the number of inputs are truly variable ie we wont know how many attempts we need to make
+// let num = 0;
+// while (num < 10) {
+//   num++;
+//   console.log(num);
+// }
+
+// ----- For Of Loops
+// a useful loop for working with Arrays
+// const subreddits = ["cringe", "books", "chickens", "funny", "pics", "soccer"];
+
+// for (reddit of subreddits) {
+//   console.log(reddit);
+// }
 
 const seatingChart = [
   ["Kristen", "Erik", "Namita"],
@@ -47,18 +77,12 @@ const seatingChart = [
   ["Yuma", "Sakura", "Jack", "Erika"],
 ];
 
-for (let i = 0; i < seatingChart.length; i++) {
-  const row = seatingChart[i];
-  console.log(`ROW #${i + 1}`);
-  for (let j = 0; j < row.length; j++) {
-    console.log(row[j]);
+for (let row of seatingChart) {
+  for (let student of row) {
+    console.log(student);
   }
 }
 
-// ------ While loops
-// This is useful where the number of inputs are truly variable ie we wont know how many attempts we need to make
-let num = 0;
-while (num < 10) {
-  num++;
-  console.log(num);
+for (let char of "hello world") {
+  console.log(char);
 }
