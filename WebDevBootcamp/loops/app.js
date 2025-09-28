@@ -54,3 +54,11 @@ for (let i = 0; i < seatingChart.length; i++) {
     console.log(row[j]);
   }
 }
+
+// ------ While loops
+// This is useful where the number of inputs are truly variable ie we wont know how many attempts we need to make
+let num = 0;
+while (num < 10) {
+  num++;
+  console.log(num);
+}
