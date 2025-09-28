@@ -71,18 +71,38 @@ const animals = ["lions", "tigers", "bears"];
 //   console.log(reddit);
 // }
 
-const seatingChart = [
-  ["Kristen", "Erik", "Namita"],
-  ["Geoffrey", "Juanita", "Antonio", "Kevin"],
-  ["Yuma", "Sakura", "Jack", "Erika"],
-];
+// const seatingChart = [
+//   ["Kristen", "Erik", "Namita"],
+//   ["Geoffrey", "Juanita", "Antonio", "Kevin"],
+//   ["Yuma", "Sakura", "Jack", "Erika"],
+// ];
 
-for (let row of seatingChart) {
-  for (let student of row) {
-    console.log(student);
-  }
-}
+// for (let row of seatingChart) {
+//   for (let student of row) {
+//     console.log(student);
+//   }
+// }
 
-for (let char of "hello world") {
-  console.log(char);
+// for (let char of "hello world") {
+//   console.log(char);
+// }
+
+// -------- FOR IN LOOPS
+// used in iterating over Objects
+
+const testScores = {
+  keenan: 81,
+  damon: 67,
+  kim: 89,
+  shawn: 91,
+  marlon: 72,
+  dwayne: 77,
+  nadia: 83,
+  elvira: 97,
+  diedre: 81,
+  vonnie: 60,
+};
+
+for (let score in testScores) {
+  console.log(testScores[score]);
 }
