@@ -72,3 +72,40 @@ function returnDay(number) {
     }
   }
 }
+
+// ---------- SCOPE
+// refers to Variable Visibility... The location where a variable is defined dictates where we have access to that variable
+
+// example of block scope
+let radius = 8;
+if (radius > 0) {
+  const PI = 3.14159;
+  let msg = "HI";
+}
+console.log(radius); //8
+// console.log(PI); // PI is not defined we are unable to access PI as we are outside the "block" which is inbetween the curly bracers
+// console.log(msg); // msg is not defined we are unable to access msg as we are outside the "block" which is inbetween the curly bracers
+
+//example of lexical scoping
+function bankRobbery() {
+  const heroes = ["Spiderman", "Wolverine", "Black Panther"];
+  function cryForHelp() {
+    for (let hero of heroes) {
+      console.log(`PLEASE HELP US ${hero.toUpperCase()}`);
+    }
+  }
+  cryForHelp();
+}
+
+bankRobbery();
+
+// function expressions - storing a function in a variable
+
+const add = function (x, y) {
+  return x + y;
+};
+add(3, 4);
+
+const square = function (num) {
+  return Math.pow(num, num);
+};
