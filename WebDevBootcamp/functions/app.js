@@ -109,3 +109,65 @@ add(3, 4);
 const square = function (num) {
   return Math.pow(num, num);
 };
+
+// -------- HIGHER ORDER FUNCTIONS
+// Functions that operate on/with other functions.
+// They can:
+//* - Accept other functions as arguments
+//* - Return a function
+
+function callTwice(func) {
+  func();
+  func();
+}
+
+function laugh() {
+  console.log("HAHAHAHA");
+}
+
+callTwice(laugh); //"HAHAHAHA"
+//"HAHAHAHA"
+
+//example of a factory function
+function makeBetweenFunc(min, max) {
+  return function (num) {
+    return num >= min && num <= max;
+  };
+}
+
+const isBewteen = makeBetweenFunc(1, 100);
+isBewteen(25);
+
+//example of methods
+// a method is a function used as a property in objects.
+
+// const math = {
+//   multiply: function (x, y) {
+//     return x * y;
+//   },
+//   divide: function (x, y) {
+//     return y / x;
+//   },
+//   square: function (x) {
+//     return x * x;
+//   },
+// };
+// math.multiply(2, 4); //8
+// math.divide(2, 4); //2
+// math.square(2); //4
+
+//---shorthand example
+const math = {
+  multiply(x, y) {
+    return x * y;
+  },
+  divide(x, y) {
+    return y / x;
+  },
+  square(x) {
+    return x * x;
+  },
+};
+math.multiply(2, 4); //8
+math.divide(2, 4); //2
+math.square(2); //4
