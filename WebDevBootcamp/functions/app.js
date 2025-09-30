@@ -171,3 +171,38 @@ const math = {
 math.multiply(2, 4); //8
 math.divide(2, 4); //2
 math.square(2); //4
+
+// ------ The keyword "this" in objects methods
+//Use the keyword this to access other properties on the same object
+
+const person = {
+  first: "Robert",
+  last: "Herjavec",
+  fullName() {
+    return `${this.first} ${this.last}`;
+  },
+};
+person.fullName(); //Robert Herjavec
+person.last = "Plant";
+person.fullName(); //Robert Plant
+
+const cat = {
+  name: "Blue Steele",
+  color: "grey",
+  breed: "scottish fold",
+  meow() {
+    console.log(`${this.name} says :meow meow meow`);
+  },
+};
+cat.meow();
+
+const meow2 = cat.meow;
+
+const hen = {
+  name: "Helen",
+  eggCount: 0,
+  layAnEgg() {
+    this.eggCount++;
+    return "EGG";
+  },
+};
