@@ -32,3 +32,28 @@ const texts = ["rofl", "lol", "omg", "ttyl"];
 const caps = texts.map(t => t.toUpperCase());
 console.log(texts); //["rofl", "lol", "omg", "ttyl"];
 console.log(caps); //['ROFL', 'LOL', 'OMG', 'TTYL']
+
+const rollDie = () => {
+  return Math.floor(Math.random() * 6) + 1;
+};
+
+//setTimeout and setInterval
+setTimeout(() => {
+  console.log("Hello!!!");
+}, 3000);
+
+// const id = setInterval(() => {
+//   console.log(Math.random());
+// }, 2000);
+
+// ---Filter
+//Creates a new array with all elements that pass the test implemented by the provided function
+
+const nums2 = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+const odds = nums2.filter(n => {
+  return n % 2 === 1; // our callback returns true or false. if it returns true, n is added to the filtered array
+});
+console.log(odds); //[9,7,5,3,1]
+
+const smallNums = nums2.filter(n => n < 5);
+console.log(smallNums); //[4,3,2,1]
