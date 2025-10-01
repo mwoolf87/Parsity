@@ -57,3 +57,12 @@ console.log(odds); //[9,7,5,3,1]
 
 const smallNums = nums2.filter(n => n < 5);
 console.log(smallNums); //[4,3,2,1]
+
+// ---- Every and Some
+// Every - tests whether all elements in the array pass the provided functions. Returns true or false.
+
+// Some - returns true if ANY of the array elements pass the test function
+
+const exams = [80, 98, 92, 78, 77, 90, 89, 84, 81, 77];
+
+exams.every(score => score >= 75);
