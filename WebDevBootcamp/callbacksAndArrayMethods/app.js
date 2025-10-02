@@ -38,9 +38,9 @@ const rollDie = () => {
 };
 
 //setTimeout and setInterval
-setTimeout(() => {
-  console.log("Hello!!!");
-}, 3000);
+// setTimeout(() => {
+//   console.log("Hello!!!");
+// }, 3000);
 
 // const id = setInterval(() => {
 //   console.log(Math.random());
@@ -65,4 +65,45 @@ console.log(smallNums); //[4,3,2,1]
 
 const exams = [80, 98, 92, 78, 77, 90, 89, 84, 81, 77];
 
-exams.every(score => score >= 75);
+console.log(exams.every(score => score >= 75));
+
+const allEvens = arr => {
+  return arr.every(num => num % 2 === 0);
+};
+
+// ---- Reduce
+[3, 5, 7, 9, 11].reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+});
+
+const prices = [9.99, 1.5, 19.99, 49.99, 30.5];
+
+// let total = 0;
+// for (let price of prices) {
+//   total += price;
+// }
+// console.log(total);
+
+const totalPrice = prices.reduce((total, price) => (total += price));
+console.log(totalPrice);
+
+const minPrice = prices.reduce((min, curr) => {
+  if (curr < min) {
+    return curr;
+  }
+  return min;
+});
+console.log(minPrice);
+
+const highestRated = movies.reduce((bestMovie, currMovie) => {
+  if (currMovie.score > bestMovie.score) {
+    return currMovie;
+  }
+  return bestMovie;
+});
+
+console.log(highestRated);
+
+const evens = [2, 4, 6, 8];
+
+evens.reduce((sum, num) => sum + num, 0);
