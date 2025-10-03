@@ -53,3 +53,38 @@ function sumAll(...args) {
   }
   return total;
 }
+
+// ----- Destructuring Arrays and Objects
+
+// examples of desctructuring arrays
+const scores = [515614856, 52315156, 15315485, 587963, 2321154, 1212315];
+
+// const [gold, silver, bronze] = scores;
+
+const raceResults = ["John O", "Sean C", "Corey T"];
+const [gold, silver, bronze] = raceResults;
+gold; // "John O"
+silver; // "Sean C"
+bronze; // "Galen Rupp"
+
+const [fastest, ...everyoneElse] = raceResults;
+fastest; // "John O"
+everyoneElse; // ["Sean C", "Corey T"]
+
+// examples of destructuring objects
+const user = {
+  email: "test@gmail.com",
+  password: "UNIT123",
+  firstName: "Mike",
+  lastName: "Woolf",
+  born: 1987,
+  city: "Hull",
+  state: "MA",
+};
+
+const { firstName, lastName, city } = user;
+console.log(firstName); // "Mike"
+console.log(lastName); // "Woolf"
+console.log(city); // "Hull"
+const { born: birthYear } = user; // creates a variable called birthYear that is set to the value of born in the user object.
+console.log(birthYear);
