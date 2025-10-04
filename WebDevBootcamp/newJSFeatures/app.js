@@ -88,3 +88,19 @@ console.log(lastName); // "Woolf"
 console.log(city); // "Hull"
 const { born: birthYear } = user; // creates a variable called birthYear that is set to the value of born in the user object.
 console.log(birthYear);
+
+// --- Parameter Destructuring
+
+const fullName = ({ first, last }) => {
+  return `${first} ${last}`;
+};
+
+const runner = {
+  first: "Eliud",
+  last: "Kopchoge",
+  country: "Kenya",
+};
+
+fullName(runner); // "Eliud Kipchoge"
+
+movies.filter(({ score }) => score >= 90);
