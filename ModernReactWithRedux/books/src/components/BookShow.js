@@ -1,7 +1,7 @@
 import BookEdit from "./BookEdit";
 import { useState } from "react";
 
-const BookShow = ({ book, onDelete }) => {
+const BookShow = ({ book, onDelete, onEdit }) => {
   const [showEdit, setShowEdit] = useState(false);
 
   const handleDeleteClick = () => {
@@ -13,7 +13,7 @@ const BookShow = ({ book, onDelete }) => {
 
   let content = <h3>{book.title}</h3>;
   if (showEdit) {
-    content = <BookEdit />;
+    content = <BookEdit book={book} onEdit={onEdit} />;
   }
   return (
     <div className="book-show">
