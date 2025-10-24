@@ -8,13 +8,13 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-      "debug-arch": "node -e \"console.log('npm sees:', process.platform, process.arch)\""
+    "debug-arch": "node -e \"console.log('npm sees:', process.platform, process.arch)\""
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.15",
     "classnames": "^2.3.1",
     "lightningcss": "^1.30.2",
-    "prop-types": "15.8.1",
+    "prop-types": "^15.8.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-icons": "4.4.0",
