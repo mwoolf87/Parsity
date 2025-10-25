@@ -21,7 +21,7 @@ function App() {
         </Button>
       </div>
       <div>
-        <Button secondary rounded>
+        <Button primary rounded>
           Something!
         </Button>
       </div>
