@@ -10,7 +10,11 @@ function TablePage() {
   ];
 
   const config = [
-    { label: "Name", render: fruit => fruit.name },
+    {
+      label: "Name",
+      render: fruit => fruit.name,
+      sortValue: fruit => fruit.name,
+    },
     {
       label: "Color",
       render: fruit => <div className={`p-3 m-3 ${fruit.color}`}></div>,
@@ -18,7 +22,7 @@ function TablePage() {
     {
       label: "Score",
       render: fruit => fruit.score,
-      header: () => <th>Score</th>,
+      sortValue: fruit => fruit.score,
     },
   ];
 
